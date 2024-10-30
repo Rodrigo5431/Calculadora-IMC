@@ -1,7 +1,10 @@
 import React from 'react'
+import './Nome.css';
 
-export default function Nome(nome) {
+export default function Nome({nome}) {
   return (
-    <footer>Nome: {nome}</footer>
+    <footer>
+        <h1 className='name'>Nome: {nome}</h1>
+    </footer>
   )
 }

@@ -1,64 +1,17 @@
-body{
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #027373;
 }
 
 header{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: aqua;
+  background-color: #04BFAD;
+  height: 90px;
 }
 
-.calculadora{
-  background-color: rgb(179, 179, 179);
-  border: 1px solid black;
-  margin-top: 200px;
-  margin-left: 35%;
-  width: 30%;
-}
-
-.titulo{
-  color: yellow;
-}
-.peso{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-}
-.altura{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.botao{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-.resultados{
-  display: block;
-  gap: 50px;
-  margin-top: 30px;
-  
-}
-.enviar{
-  width: 25%;
-  height: 35%;
-  font-size: 25px;
-  background-color: green;
-  color: white;
-}
-.pesoC{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.imc{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
