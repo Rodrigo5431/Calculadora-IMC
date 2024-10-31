@@ -1,19 +1,15 @@
 import React from "react";
 import "./App.css";
-import Imc from "./components/Imc";
-import Nome from "./components/Nome";
+import Header from "./components/Header/index";
+import Imc from "./components/Form/Imc";
+import Footer from "./components/Footer/Nome";
 
 export default function App() {
-
   return (
     <body>
-      <header>
-        <div className="titulo">
-          <h1>Calculadora de IMC</h1>
-        </div>
-      </header>
-      <Imc/>
-       <Nome nome={"Rodrigo Carvalho Lima"}/> 
+      <Header />
+      <Imc />
+      <Footer nome={"Rodrigo Carvalho Lima"} />
     </body>
   );
 }

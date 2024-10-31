@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Imc.css";
-import obesidade from "../assets/obesidade.jpg";
+import obesidade from '../../assets/obesidade.jpg';
 
 export default function IMC() {
   const [peso, setPeso] = useState();
@@ -71,6 +71,7 @@ export default function IMC() {
           </button>
         </div>
 
+            
         {showResults && (
           <section className="resultados">
             <div className="imc">
@@ -80,15 +81,7 @@ export default function IMC() {
               <p>{pesoCorporal}</p>
             </div>
             <div className="verTabela">
-              <a
-                href=""
-                className="botaoTabela"
-                onClick={(e) => {
-                  e.preventDefault(), setShowTable(!showTable);
-                }}
-              >
-                {showTable ? "Fechar Tabela" : "Ver tabela"}
-              </a>
+              <a href="" className="botaoTabela" onClick={(e) => {e.preventDefault(), setShowTable(!showTable);}}>{showTable ? "Fechar Tabela" : "Ver tabela"}</a>
             </div>
           </section>
         )}  

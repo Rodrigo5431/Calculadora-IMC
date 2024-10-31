@@ -81,6 +81,9 @@ display: flex;
 .botaoTabela{
   margin-top: 5.px;
 }
+.botaoTabela:hover{
+  color: green;
+}
 .verTabela{
   margin-top: 20px;
   margin-bottom: 20px;
