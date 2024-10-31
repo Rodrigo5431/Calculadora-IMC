@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Imc.css";
+import obesidade from "../assets/obesidade.jpg";
 
 export default function IMC() {
   const [peso, setPeso] = useState();
@@ -7,34 +8,37 @@ export default function IMC() {
   const [imc, setImc] = useState();
   const [pesoCorporal, setPesoCorporal] = useState("");
   const [showResults, setShowResults] = useState(false);
+  const [showTable, setShowTable] = useState(false);
 
   function calcular() {
     if (peso > 0 && altura > 0) {
       let alturaM = altura / 100;
       let imcCalculado = (peso / (alturaM * alturaM)).toFixed(2);
       setImc(imcCalculado);
-      setShowResults(true);
+      verificaPesoCorporal(imcCalculado);
     } else {
       alert("Peso e altura devem ser maior q 0");
     }
   }
-  function verificaPesoCorporal() {
-    if (imc < 18.5) {
+  function verificaPesoCorporal(imcCalculado) {
+    if (imcCalculado < 18.5) {
       setPesoCorporal("Esta abaixo do peso");
-    } else if (imc >= 18.5 && imc < 24.9) {
-      setPesoCorporal("Esta no Peso ideal");
-    } else if (imc >= 25 && imc < 29.3) {
+    } else if (imcCalculado >= 18.5 && imcCalculado <= 24.9) {
+      setPesoCorporal("Eutrofia, Esta no Peso ideal");
+    } else if (imcCalculado >= 25 && imcCalculado <= 29.9) {
       setPesoCorporal("Esta no Sobrepeso");
-    } else if (imc >= 29.3 && imc < 34.9) {
+    } else if (imcCalculado >= 30.0 && imcCalculado <= 34.9) {
       setPesoCorporal("Esta com Obesidade Grau 1");
-    } else if (imc >= 34.9 && imc < 39.9) {
+    } else if (imcCalculado >= 35.0 && imcCalculado <= 39.9) {
       setPesoCorporal("Esta com Obesidade Grau 2");
-    } else if (imc >= 39.9) {
+    } else if (imcCalculado > 40.0) {
       setPesoCorporal("Esta com Obesidade Grau Extrema");
     }
+    setShowResults(true);
   }
+
   return (
-    <div className="calculadora">
+    <form className="calculadora">
       <main>
         <div className="peso">
           <label>Peso: </label>
@@ -60,7 +64,7 @@ export default function IMC() {
             className="enviar"
             type="button"
             onClick={() => {
-              calcular(), verificaPesoCorporal();
+              calcular();
             }}
           >
             Calcular
@@ -75,9 +79,25 @@ export default function IMC() {
             <div className="pesoC">
               <p>{pesoCorporal}</p>
             </div>
+            <div className="verTabela">
+              <a
+                href=""
+                className="botaoTabela"
+                onClick={(e) => {
+                  e.preventDefault(), setShowTable(!showTable);
+                }}
+              >
+                {showTable ? "Fechar Tabela" : "Ver tabela"}
+              </a>
+            </div>
+          </section>
+        )}  
+        {showTable && (
+          <section className="tabela">
+            <img className="imagem" src={obesidade} alt="" />
           </section>
         )}
       </main>
-    </div>
+    </form>
   );
 }

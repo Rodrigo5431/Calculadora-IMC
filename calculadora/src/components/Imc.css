@@ -65,3 +65,24 @@ input{
   justify-content: center;
   margin-top: 15px;
 }
+.tabela{
+display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagem{
+  display: flex;
+  width: 90%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+ 
+}
+.botaoTabela{
+  margin-top: 5.px;
+}
+.verTabela{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}

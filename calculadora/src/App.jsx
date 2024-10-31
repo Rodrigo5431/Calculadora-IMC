@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import IMC from "./components/IMC";
+import Imc from "./components/Imc";
 import Nome from "./components/Nome";
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
           <h1>Calculadora de IMC</h1>
         </div>
       </header>
-      <IMC/>
+      <Imc/>
        <Nome nome={"Rodrigo Carvalho Lima"}/> 
     </body>
   );
